@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=3">
+<link rel="stylesheet" href="style.css?v=10">
 </head>
 <body>
 
@@ -48,7 +48,7 @@
 <!-- ===== BOVENKANT ===== -->
 <section id="top" class="hero wrap">
   <div class="hero-text">
-    <h1>Wat als je cyclus je iets probeert te <em>vertellen</em>?</h1>
+    <h1>Wat als je cyclus je <em>iets probeert te vertellen</em>?</h1>
     <p class="hero-sub">Ik ben Laura, <strong>hormoon- en leefstijlcoach voor vrouwen</strong>.</p>
     <p class="hero-hook">Moe, opgeblazen of niet jezelf? Vaak is dat een signaal.</p>
     <div class="row">
@@ -73,7 +73,7 @@
   <div class="wrap scan">
     <div class="scan-intro">
       <span class="eyebrow">Gratis · 2 minuten</span>
-      <h2>Jouw <em>hormoon&shy;profiel</em></h2>
+      <h2>Waar kun jij het beste <em>beginnen</em>?</h2>
       <p>12 korte vragen. Daarna zie je waar jouw grootste winst zit: voeding, licht, slaap, stress, beweging of een gifvrij huis.</p>
     </div>
     <div class="scan-card">
@@ -93,9 +93,9 @@
       <!-- stap 2: e-mail -->
       <!-- KOPPELEN: zet hier later je MailerLite-formulier, of laat dit formulier naar MailerLite posten (zie README). -->
       <form id="scanGate" class="stack-20" hidden>
-        <span class="italic-24">je profiel is klaar</span>
+        <span class="italic-24">je uitslag is klaar</span>
         <span class="gate-title">Waar mag ik je uitslag naartoe sturen?</span>
-        <p>Vul je e-mailadres in en je ziet meteen je hormoonprofiel. Je krijgt hem ook in je mail, met 3 tips.</p>
+        <p>Vul je e-mailadres in en je ziet meteen waar jij het beste aan kunt werken. Je krijgt het ook in je mail, met 3 tips.</p>
         <div class="grid-fields">
           <div class="field"><label for="scanNaam">Voornaam</label><input id="scanNaam" name="name" type="text" autocomplete="given-name"></div>
           <div class="field"><label for="scanMail">E-mailadres</label><input id="scanMail" name="email" type="email" autocomplete="email" required></div>
@@ -107,16 +107,16 @@
       <!-- stap 3: uitslag -->
       <div id="scanResult" class="stack-28" aria-live="polite" hidden>
         <div class="stack-6">
-          <span class="italic-24">jouw profiel, begin bij</span>
+          <span id="resultPre" class="italic-24">jij kunt het beste beginnen bij</span>
           <span id="resultTitle" class="result-title"></span>
         </div>
         <div class="stack-14">
           <div id="bars" class="stack-14"></div>
-          <span class="small">Hoe langer de balk, hoe meer winst daar te halen is.</span>
+          <span id="resultNote" class="small">Hoe langer de balk, hoe meer winst daar te halen is.</span>
         </div>
-        <p class="bold-17">Je profiel en 3 tips staan ook in je inbox.</p>
+        <p class="bold-17">Je uitslag en 3 tips staan ook in je inbox.</p>
         <div class="row">
-          <button type="button" id="shareBtn" class="btn btn-outline">Stuur de scan naar een vriendin</button>
+          <button type="button" id="shareBtn" class="btn btn-outline">Stuur de scan door</button>
           <button type="button" id="restartBtn" class="link-btn">Opnieuw</button>
         </div>
       </div>
@@ -129,9 +129,9 @@
   <h2>Zo gaat de <em>coaching</em></h2>
   <div class="steps">
     <div class="step"><span class="num" aria-hidden="true">1</span><h3>Kennismaken</h3><p>Een vrijblijvend gesprek van 20 minuten. We kijken of het klikt.</p></div>
-    <div class="step"><span class="num" aria-hidden="true">2</span><h3>Jouw startpunt</h3><p>We brengen je klachten, cyclus en dagritme in kaart.</p></div>
-    <div class="step"><span class="num" aria-hidden="true">3</span><h3>Jouw plan</h3><p>We kijken welke aanpassingen bij jou passen. Stap voor stap.</p></div>
-    <div class="step"><span class="num" aria-hidden="true">4</span><h3>Samen verder</h3><p>Elke 2 weken een gesprek. Tussendoor kun je me altijd appen.</p></div>
+    <div class="step"><span class="num" aria-hidden="true">2</span><h3>Jouw startpunt</h3><p>We brengen in kaart hoe je slaapt, eet en je voelt.</p></div>
+    <div class="step"><span class="num" aria-hidden="true">3</span><h3>Jouw plan</h3><p>Je krijgt een plan op maat. We beginnen bij wat het meeste oplevert.</p></div>
+    <div class="step"><span class="num" aria-hidden="true">4</span><h3>Samen verder</h3><p>Elke 2 weken een videogesprek. Tussendoor kun je me altijd appen.</p></div>
   </div>
   <div class="ticker-wrap">
     <div class="ticker" aria-label="Waar we samen aan werken">
@@ -158,13 +158,13 @@
       </div>
     </div>
     <div class="wie-text">
-      <span class="italic-24">wie ben ik</span>
+      <span class="italic-24">Wie ben ik</span>
       <h2>Hoi, ik ben <em>Laura</em></h2>
       <p class="lead">Al jaren verdiep ik me in hormonen en leefstijl. Ik begon zelf bij de basis en merkte hoeveel dat veranderde. Nu help ik andere vrouwen om zich ook weer zichzelf te voelen.</p>
       <div class="trust">
         <div><svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C98B8B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-5 9 5-9 5z"/><path d="M7 11v5c3 2 7 2 10 0v-5"/></svg><span><strong>Opleiding tot hormooncoach</strong> bij Ralph Moorman</span></div>
         <div><svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C98B8B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5"/><path d="M12 14v7M9 18h6"/></svg><span><strong>We kijken naar het totaalplaatje</strong>, niet alleen naar je klacht</span></div>
-        <div><svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C98B8B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg><span><strong>Een leefstijl die bij jou past</strong>, zonder strenge regels</span></div>
+        <div><svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C98B8B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg><span><strong>Gericht op wat jij nodig hebt</strong>: meer energie, beter slapen, weer jezelf</span></div>
       </div>
       <div class="stack-12">
         <div class="insta-head">
@@ -189,14 +189,14 @@
         <div class="book-page"></div>
         <div class="book-cover">
           <span class="book-brand">happy hormones<span class="dot">.</span></span>
-          <div class="stack-10"><span class="book-title">Hoe gezond is jouw mandje <em>echt</em>?</span><span class="book-sub">Slim kiezen, van etiket tot keukenkastje</span></div>
+          <div class="stack-10"><span class="book-title">Hoe gezond is <em>jouw mandje echt</em>?</span><span class="book-sub">Slim kiezen, van etiket tot keukenkastje</span></div>
           <span class="book-author">door Laura</span>
         </div>
         <span class="book-stamp">eerste deel gratis</span>
       </div>
       <div class="ebook-text">
-        <span class="italic-24">mijn e-book</span>
-        <h2>Hoe gezond is jouw mandje <em>echt</em>?</h2>
+        <span class="italic-24">Mijn e-book</span>
+        <h2>Hoe gezond is <em>jouw mandje echt</em>?</h2>
         <p class="lead">Slim kiezen, van etiket tot keukenkastje. Zonder strenge regels, stap voor stap.</p>
         <ul class="checks">
           <li>De supermarktgids, afdeling per afdeling</li>
@@ -222,7 +222,7 @@
       <div class="offer offer-paid">
         <span class="eyebrow-13">Het hele boek</span>
         <h3>Het complete boek</h3>
-        <p class="grow">Met de supermarktgids en 4 printbare bonussen. Direct downloaden en meteen aan de slag.</p>
+        <p class="grow">Alle hoofdstukken, van etiket tot keukenkastje, plus 4 printbare bonussen. Direct te downloaden.</p>
         <div class="price">
           <span class="old"><span class="sr">van </span>€ 12</span>
           <span class="new"><span class="sr">voor </span>€ 7</span>
@@ -245,7 +245,7 @@
       <div class="grid-fields">
         <div class="field"><label for="planNaam">Voornaam</label><input id="planNaam" name="name" type="text" autocomplete="given-name" required></div>
         <div class="field"><label for="planMail">E-mailadres</label><input id="planMail" name="email" type="email" autocomplete="email" required></div>
-        <div class="field"><label for="planTel">Telefoon <span class="opt">(mag, hoeft niet)</span></label><input id="planTel" name="phone" type="tel" autocomplete="tel"></div>
+        <div class="field"><label for="planTel">Telefoonnummer</label><input id="planTel" name="phone" type="tel" autocomplete="tel"></div>
       </div>
       <button type="submit" class="btn btn-white btn-xl">Plan mijn kennismaking</button>
     </form>
@@ -270,11 +270,11 @@
     <p>Staat je vraag er niet bij? Stuur me gerust een appje, of stel hem in het gesprek.</p>
   </div>
   <div class="faq-list">
-    <details><summary>Voor wie is het?</summary><p>Voor vrouwen die zich beter willen voelen. Slecht slapen, moe wakker worden, trek in zoet of stemmingswisselingen: het heeft allemaal met je hormonen te maken.</p></details>
-    <details><summary>Wat gebeurt er in het gratis gesprek?</summary><p>Je vertelt waar je tegenaan loopt. Ik vertel eerlijk of en hoe ik je kan helpen. Zonder verplichtingen.</p></details>
-    <details><summary>Hoe lang duurt een traject?</summary><p>Dat bespreken we samen in het gratis gesprek, zodat het past bij jou.</p></details>
-    <details><summary>Moet ik meteen alles omgooien?</summary><p>Nee. We werken met kleine stappen die passen in jouw leven, zonder strenge regels.</p></details>
-    <details><summary>Is alles online?</summary><p>Ja, alle gesprekken zijn online. Waar je ook woont.</p></details>
+    <details><summary>Voor wie is de coaching?</summary><p>Voor vrouwen die voelen dat er iets niet klopt. Moe wakker worden, slecht slapen, een opgeblazen buik, trek in zoet of stemmingswisselingen. Vaak zijn dat signalen van je hormonen, en daar kun je met je leefstijl veel aan doen.</p></details>
+    <details><summary>Wat gebeurt er in het gratis kennismakingsgesprek?</summary><p>In 20 minuten vertel je waar je tegenaan loopt en wat je graag anders wilt. Ik vertel je eerlijk of ik je kan helpen en hoe dat eruitziet. Je zit nergens aan vast.</p></details>
+    <details><summary>Hoe lang duurt een traject?</summary><p>Dat verschilt per persoon. In het kennismakingsgesprek kijken we samen wat bij jou past.</p></details>
+    <details><summary>Moet ik meteen alles omgooien?</summary><p>Nee. We beginnen bij wat voor jou het meeste verschil maakt en bouwen van daaruit verder. Soms is dat een kleine aanpassing, soms wat meer. Jij bepaalt het tempo.</p></details>
+    <details><summary>Hoe gaan de gesprekken?</summary><p>Elke 2 weken hebben we een videogesprek, dus je kunt overal meedoen. Tussendoor kun je me appen als je vastloopt of een vraag hebt.</p></details>
   </div>
 </section>
 
@@ -290,6 +290,6 @@
   </div>
 </footer>
 
-<script src="script.js?v=3"></script>
+<script src="script.js?v=10"></script>
 </body>
 </html>
