@@ -450,3 +450,7 @@ details[open] summary::after{transform:rotate(45deg)}
   .signup{max-width:1000px}
   .plan-form{max-width:820px}
 }
+@media (min-width:901px) and (min-height:540px){
+  .steps-section .ticker-wrap{margin-top:clamp(24px,9vh,100px)}
+}
+.wie-text .italic-24,.ebook-text .italic-24{font-size:clamp(24px,2.2vw,30px);color:var(--oudroze)}
