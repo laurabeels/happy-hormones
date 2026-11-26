@@ -88,14 +88,43 @@ var FORMS = {
     });
   });
 
-  function best() {
-    var b = null;
-    keys.forEach(function (k) { if ((score[k] || 0) > 0 && (!b || score[k] > score[b])) b = k; });
-    return b;
+  // welke gebieden scoren het hoogst? (kunnen er meer zijn bij gelijke stand)
+  function top() {
+    var max = 0;
+    keys.forEach(function (k) { max = Math.max(max, score[k] || 0); });
+    if (max === 0) return [];
+    return keys.filter(function (k) { return (score[k] || 0) === max; });
+  }
+  function joinLabels(list) {
+    var l = list.map(function (k) { return labels[k]; });
+    return l.length < 2 ? l.join('') : l.slice(0, -1).join(', ') + ' & ' + l[l.length - 1];
+  }
+  function uitslagTekst() {
+    var t = top();
+    if (t.length === 0) return 'basis op orde';
+    if (t.length === keys.length) return 'overal gelijk';
+    return joinLabels(t);
   }
   function showResult() {
-    var b = best();
-    document.getElementById('resultTitle').textContent = b ? labels[b] : 'je basis';
+    var t = top();
+    var pre = document.getElementById('resultPre'), title = document.getElementById('resultTitle'), note = document.getElementById('resultNote');
+    if (t.length === 0) {
+      pre.textContent = 'mooi, je basis staat al goed';
+      title.textContent = 'Lekker bezig!';
+      note.textContent = 'Je scoort overal laag. In een gratis gesprek kijken we wat jou nog verder helpt.';
+    } else if (t.length === keys.length) {
+      pre.textContent = 'uit jouw antwoorden blijkt';
+      title.textContent = 'Overal winst te halen';
+      note.textContent = 'Alle gebieden scoren even hoog. In een gratis gesprek kijken we samen waar jij het beste kunt beginnen.';
+    } else if (t.length > 1) {
+      pre.textContent = 'jij kunt het beste beginnen bij';
+      title.textContent = joinLabels(t);
+      note.textContent = 'Deze gebieden scoren even hoog. Hoe langer de balk, hoe meer winst daar te halen is.';
+    } else {
+      pre.textContent = 'jij kunt het beste beginnen bij';
+      title.textContent = labels[t[0]];
+      note.textContent = 'Hoe langer de balk, hoe meer winst daar te halen is.';
+    }
     var bars = document.getElementById('bars');
     bars.innerHTML = '';
     keys.forEach(function (k) {
@@ -103,7 +132,8 @@ var FORMS = {
       var row = document.createElement('div'); row.className = 'bar';
       var lab = document.createElement('span'); lab.textContent = labels[k];
       var track = document.createElement('div'); track.className = 'bar-track';
-      var fill = document.createElement('div'); fill.className = 'bar-fill' + (k === b ? ' best' : ''); fill.style.width = '0%';
+      var isTop = t.indexOf(k) > -1 && t.length < keys.length;
+      var fill = document.createElement('div'); fill.className = 'bar-fill' + (isTop ? ' best' : ''); fill.style.width = '0%';
       track.appendChild(fill); row.appendChild(lab); row.appendChild(track); bars.appendChild(row);
       requestAnimationFrame(function () { requestAnimationFrame(function () { fill.style.width = pct + '%'; }); });
     });
@@ -115,8 +145,8 @@ var FORMS = {
     if (!validMail(m)) { document.getElementById('scanError').hidden = false; return; }
     document.getElementById('scanError').hidden = true;
     // stuur ook de uitkomst mee, zodat je mailprogramma de juiste tips kan sturen
-    var b = best();
-    var extra = document.createElement('input'); extra.type = 'hidden'; extra.name = 'uitslag'; extra.value = b ? labels[b] : 'basis';
+    var extra = elGate.querySelector('input[name="uitslag"]') || document.createElement('input');
+    extra.type = 'hidden'; extra.name = 'uitslag'; extra.value = uitslagTekst();
     elGate.appendChild(extra);
     send(FORMS.scan, elGate);
     showResult();
@@ -129,7 +159,7 @@ var FORMS = {
     var btn = this;
     if (navigator.share) { navigator.share({ title: 'happy hormones · hormoonscan', url: url }).catch(function () {}); return; }
     try { navigator.clipboard.writeText(url); } catch (e) {}
-    btn.textContent = 'Link gekopieerd, stuur hem door';
+    btn.textContent = 'Link gekopieerd';
   });
   showQuestion();
 
