@@ -454,3 +454,4 @@ details[open] summary::after{transform:rotate(45deg)}
   .steps-section .ticker-wrap{margin-top:clamp(24px,9vh,100px)}
 }
 .wie-text .italic-24,.ebook-text .italic-24{font-size:clamp(24px,2.2vw,30px);color:var(--oudroze)}
+.hero .row{margin-top:clamp(12px,3.5vh,32px)}
