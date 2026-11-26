@@ -422,3 +422,35 @@ details[open] summary::after{transform:rotate(45deg)}
   .gate-title{font-size:clamp(28px,min(3.2vw,6vh),44px)}
   #scanGate input{min-height:50px}
 }
+
+/* =========================================================
+   Menu-klik = precies één scherm
+   - elk blok vult het hele scherm; de inhoud staat in het midden
+     van de ruimte onder het zwevende menu
+   - je ziet dus geen stuk van het vorige of volgende blok meer
+   ========================================================= */
+@media (min-width:901px) and (min-height:540px){
+  :root{--menu:78px}
+  #scan,#stappen,#wie,#ebook,#aanmelden{
+    min-height:100svh;scroll-margin-top:0;
+    display:flex;flex-direction:column;justify-content:center;
+    padding-top:calc(var(--menu) + clamp(4px,1.5vh,20px));
+    padding-bottom:clamp(16px,3.5vh,40px);
+    margin-bottom:0;
+  }
+  #vragen{scroll-margin-top:var(--menu)}
+  .scan,.wie,.stack-ebook{padding-top:0;padding-bottom:0;width:100%}
+  #stappen.steps-section{padding-top:calc(var(--menu) + clamp(4px,1.5vh,20px));padding-bottom:clamp(16px,3.5vh,40px)}
+  .wie{align-items:center}
+  .signup-section{padding-left:var(--pad-x);padding-right:var(--pad-x)}
+  .signup{width:100%}
+  .faq{padding-top:clamp(32px,6vh,72px)}
+}
+@media (min-width:901px){
+  .signup{max-width:1000px}
+  .plan-form{max-width:820px}
+}
+@media (min-width:901px) and (min-height:540px){
+  .steps-section .ticker-wrap{margin-top:clamp(24px,9vh,100px)}
+}
+.wie-text .italic-24,.ebook-text .italic-24{font-size:clamp(24px,2.2vw,30px);color:var(--oudroze)}
