@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>happy hormones · hormoon- en leefstijlcoach voor vrouwen</title>
+<meta name="description" content="Ik ben Laura, hormoon- en leefstijlcoach voor vrouwen. Doe de gratis hormoonscan of plan een vrijblijvend gesprek.">
+<meta property="og:title" content="happy hormones · hormoon- en leefstijlcoach voor vrouwen">
+<meta property="og:description" content="Wat als je cyclus je iets probeert te vertellen? Doe de gratis hormoonscan.">
+<meta property="og:image" content="laura-hero.jpg">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=9">
+</head>
+<body>
+
+<!-- ===== MENU ===== -->
+<div class="topbar" id="topbar">
+  <header class="head">
+    <a href="#top" class="logo">happy hormones<span class="dot">.</span></a>
+    <nav aria-label="Hoofdmenu" class="nav">
+      <div class="pill">
+        <a href="#scan">Hormoonscan</a>
+        <a href="#stappen">Zo werkt het</a>
+        <a href="#wie">Wie ben ik</a>
+        <a href="#ebook">E-book</a>
+        <a href="#vragen">Vragen</a>
+      </div>
+      <a href="#aanmelden" class="btn btn-dark cta"><span class="long">Plan een gratis gesprek</span><span class="short">Gratis gesprek</span></a>
+      <button type="button" class="burger" id="burger" aria-label="Menu openen" aria-expanded="false">
+        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A3B32" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </nav>
+  </header>
+  <nav aria-label="Menu" class="mobile-menu" id="mobileMenu" hidden>
+    <a href="#scan">Hormoonscan</a>
+    <a href="#stappen">Zo werkt het</a>
+    <a href="#wie">Wie ben ik</a>
+    <a href="#ebook">E-book</a>
+    <a href="#vragen">Vragen</a>
+  </nav>
+</div>
+
+<main>
+
+<!-- ===== BOVENKANT ===== -->
+<section id="top" class="hero wrap">
+  <div class="hero-text">
+    <h1>Wat als je cyclus je <em>iets probeert te vertellen</em>?</h1>
+    <p class="hero-sub">Ik ben Laura, <strong>hormoon- en leefstijlcoach voor vrouwen</strong>.</p>
+    <p class="hero-hook">Moe, opgeblazen of niet jezelf? Vaak is dat een signaal.</p>
+    <div class="row">
+      <a href="#aanmelden" class="btn btn-dark btn-lg">Plan een gratis gesprek</a>
+      <a href="#scan" class="btn btn-white btn-lg">Doe de hormoonscan</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="ring-box">
+      <svg class="ring" aria-hidden="true" viewBox="0 0 540 540">
+        <defs><path id="ringpath" d="M270 270m-246 0a246 246 0 1 1 492 0a246 246 0 1 1 -492 0"/></defs>
+        <text><textPath href="#ringpath" textLength="1540" lengthAdjust="spacing">happy hormones · hormoon- en leefstijlcoach voor vrouwen · terug naar de basis ·</textPath></text>
+      </svg>
+      <div class="ring-photo"><img src="laura-hero.jpg" alt="Laura lachend bij zonsondergang aan zee"></div>
+      <a href="#ebook" class="sticker"><span class="s1">gratis</span><span class="s2">eerste deel<br>e-book</span><span class="s3">lees nu</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HORMOONSCAN ===== -->
+<section id="scan" class="band-beige">
+  <div class="wrap scan">
+    <div class="scan-intro">
+      <span class="eyebrow">Gratis · 2 minuten</span>
+      <h2>Waar kun jij het beste <em>beginnen</em>?</h2>
+      <p>12 korte vragen. Daarna zie je waar jouw grootste winst zit: voeding, licht, slaap, stress, beweging of een gifvrij huis.</p>
+    </div>
+    <div class="scan-card">
+      <!-- stap 1: vragen -->
+      <div id="scanQ" class="stack-32">
+        <div class="stack-10">
+          <span id="stepLabel" class="small">Vraag 1 van 12</span>
+          <div class="progress" aria-hidden="true"><div id="progressBar"></div></div>
+        </div>
+        <p id="question" class="question" aria-live="polite"></p>
+        <div class="answers" role="group" aria-label="Hoe vaak?">
+          <button type="button" data-v="0" class="ans ans-1">Nooit</button>
+          <button type="button" data-v="1" class="ans ans-2">Soms</button>
+          <button type="button" data-v="2" class="ans ans-3">Vaak</button>
+        </div>
+      </div>
+      <!-- stap 2: e-mail -->
+      <!-- KOPPELEN: zet hier later je MailerLite-formulier, of laat dit formulier naar MailerLite posten (zie README). -->
+      <form id="scanGate" class="stack-20" hidden>
+        <span class="italic-24">je uitslag is klaar</span>
+        <span class="gate-title">Waar mag ik je uitslag naartoe sturen?</span>
+        <p>Vul je e-mailadres in en je ziet meteen waar jij het beste aan kunt werken. Je krijgt het ook in je mail, met 3 tips.</p>
+        <div class="grid-fields">
+          <div class="field"><label for="scanNaam">Voornaam</label><input id="scanNaam" name="name" type="text" autocomplete="given-name"></div>
+          <div class="field"><label for="scanMail">E-mailadres</label><input id="scanMail" name="email" type="email" autocomplete="email" required></div>
+        </div>
+        <p id="scanError" class="error" role="alert" hidden>Vul een geldig e-mailadres in, dan zie je je uitslag.</p>
+        <button type="submit" class="btn btn-dark btn-lg self-start">Bekijk mijn uitslag</button>
+        <span class="small">Geen spam. Afmelden kan altijd met één klik.</span>
+      </form>
+      <!-- stap 3: uitslag -->
+      <div id="scanResult" class="stack-28" aria-live="polite" hidden>
+        <div class="stack-6">
+          <span id="resultPre" class="italic-24">jij kunt het beste beginnen bij</span>
+          <span id="resultTitle" class="result-title"></span>
+        </div>
+        <div class="stack-14">
+          <div id="bars" class="stack-14"></div>
+          <span id="resultNote" class="small">Hoe langer de balk, hoe meer winst daar te halen is.</span>
+        </div>
+        <p class="bold-17">Je uitslag en 3 tips staan ook in je inbox.</p>
+        <div class="row">
+          <button type="button" id="shareBtn" class="btn btn-outline">Stuur de scan door</button>
+          <button type="button" id="restartBtn" class="link-btn">Opnieuw</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ZO GAAT DE COACHING ===== -->
+<section id="stappen" class="wrap steps-section">
+  <h2>Zo gaat de <em>coaching</em></h2>
+  <div class="steps">
+    <div class="step"><span class="num" aria-hidden="true">1</span><h3>Kennismaken</h3><p>Een vrijblijvend gesprek van 20 minuten. We kijken of het klikt.</p></div>
+    <div class="step"><span class="num" aria-hidden="true">2</span><h3>Jouw startpunt</h3><p>We brengen in kaart hoe je slaapt, eet en je voelt.</p></div>
+    <div class="step"><span class="num" aria-hidden="true">3</span><h3>Jouw plan</h3><p>Je krijgt een plan op maat. We beginnen bij wat het meeste oplevert.</p></div>
+    <div class="step"><span class="num" aria-hidden="true">4</span><h3>Samen verder</h3><p>Elke 2 weken een videogesprek. Tussendoor kun je me altijd appen.</p></div>
+  </div>
+  <div class="ticker-wrap">
+    <div class="ticker" aria-label="Waar we samen aan werken">
+      <span class="ticker-label">Waar we samen aan werken</span>
+      <div class="ticker-mask">
+        <div class="ticker-track">
+          <span>voeding</span><i>●</i><span>licht</span><i>●</i><span>slaap</span><i>●</i><span>beweging</span><i>●</i><span>gifvrij huis</span><i>●</i>
+          <span aria-hidden="true">voeding</span><i>●</i><span aria-hidden="true">licht</span><i>●</i><span aria-hidden="true">slaap</span><i>●</i><span aria-hidden="true">beweging</span><i>●</i><span aria-hidden="true">gifvrij huis</span><i>●</i>
+          <span aria-hidden="true">voeding</span><i>●</i><span aria-hidden="true">licht</span><i>●</i><span aria-hidden="true">slaap</span><i>●</i><span aria-hidden="true">beweging</span><i>●</i><span aria-hidden="true">gifvrij huis</span><i>●</i>
+          <span aria-hidden="true">voeding</span><i>●</i><span aria-hidden="true">licht</span><i>●</i><span aria-hidden="true">slaap</span><i>●</i><span aria-hidden="true">beweging</span><i>●</i><span aria-hidden="true">gifvrij huis</span><i>●</i>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WIE BEN IK ===== -->
+<section id="wie" class="band-white">
+  <div class="wrap wie">
+    <div class="wie-photo">
+      <div class="polaroid">
+        <img src="laura-wie-ben-ik.jpg" alt="Laura lachend aan tafel in een restaurant vol planten">
+        <span>dit ben ik</span>
+      </div>
+    </div>
+    <div class="wie-text">
+      <span class="italic-24">Wie ben ik</span>
+      <h2>Hoi, ik ben <em>Laura</em></h2>
+      <p class="lead">Al jaren verdiep ik me in hormonen en leefstijl. Ik begon zelf bij de basis en merkte hoeveel dat veranderde. Nu help ik andere vrouwen om zich ook weer zichzelf te voelen.</p>
+      <div class="trust">
+        <div><svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C98B8B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-5 9 5-9 5z"/><path d="M7 11v5c3 2 7 2 10 0v-5"/></svg><span><strong>Opleiding tot hormooncoach</strong> bij Ralph Moorman</span></div>
+        <div><svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C98B8B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5"/><path d="M12 14v7M9 18h6"/></svg><span><strong>We kijken naar het totaalplaatje</strong>, niet alleen naar je klacht</span></div>
+        <div><svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C98B8B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg><span><strong>Gericht op wat jij nodig hebt</strong>: meer energie, beter slapen, weer jezelf</span></div>
+      </div>
+      <div class="stack-12">
+        <div class="insta-head">
+          <span class="italic-22">kijk mee op Instagram</span>
+          <a href="https://instagram.com/happyhormonesnl" target="_blank" rel="noopener" class="insta-link"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4A3B32" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="#4A3B32"/></svg>@happyhormonesnl</a>
+        </div>
+        <div class="feed">
+          <a href="https://instagram.com/happyhormonesnl" target="_blank" rel="noopener"><img src="post-hormonen.jpg" alt="Post: 6 dingen die invloed hebben op je hormonen" loading="lazy"></a>
+          <a href="https://instagram.com/happyhormonesnl" target="_blank" rel="noopener"><img src="post-bril.jpg" alt="Post: Ja, ik draag deze bril. Ook in het vliegtuig." loading="lazy"></a>
+          <a href="https://instagram.com/happyhormonesnl" target="_blank" rel="noopener"><img src="post-sporten.jpg" alt="Post: Sporten is meer dan calorieën verbranden." loading="lazy"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== E-BOOK ===== -->
+<section id="ebook" class="band-beige ebook-section">
+  <div class="wrap stack-ebook">
+    <div class="ebook-top">
+      <div class="book">
+        <div class="book-page"></div>
+        <div class="book-cover">
+          <span class="book-brand">happy hormones<span class="dot">.</span></span>
+          <div class="stack-10"><span class="book-title">Hoe gezond is <em>jouw mandje echt</em>?</span><span class="book-sub">Slim kiezen, van etiket tot keukenkastje</span></div>
+          <span class="book-author">door Laura</span>
+        </div>
+        <span class="book-stamp">eerste deel gratis</span>
+      </div>
+      <div class="ebook-text">
+        <span class="italic-24">Mijn e-book</span>
+        <h2>Hoe gezond is <em>jouw mandje echt</em>?</h2>
+        <p class="lead">Slim kiezen, van etiket tot keukenkastje. Zonder strenge regels, stap voor stap.</p>
+        <ul class="checks">
+          <li>De supermarktgids, afdeling per afdeling</li>
+          <li>Je keuken hormoonvriendelijk maken</li>
+          <li>Dagmenu's, basisvoorraad en je eerste week</li>
+          <li>4 printbare bonussen, zoals de swap-cheatsheet</li>
+        </ul>
+      </div>
+    </div>
+    <div class="offers">
+      <div class="offer offer-free">
+        <span class="eyebrow-13">Gratis proeven</span>
+        <h3>Het eerste deel</h3>
+        <p class="grow">Ontdek waarom gezond kiezen zo lastig is. Gratis in je mail.</p>
+        <!-- KOPPELEN: MailerLite-formulier voor het gratis deel (zie README). -->
+        <form id="ebookForm" class="stack-8">
+          <label for="ebookMail">Je e-mailadres</label>
+          <input id="ebookMail" name="email" type="email" autocomplete="email" placeholder="Je e-mailadres" required>
+          <button type="submit" class="btn btn-outline btn-lg">Stuur me het gratis deel</button>
+        </form>
+        <p id="ebookThanks" class="thanks" aria-live="polite" hidden>Hij staat in je inbox. Veel leesplezier!</p>
+      </div>
+      <div class="offer offer-paid">
+        <span class="eyebrow-13">Het hele boek</span>
+        <h3>Het complete boek</h3>
+        <p class="grow">Met de supermarktgids en 4 printbare bonussen. Direct downloaden en meteen aan de slag.</p>
+        <div class="price">
+          <span class="old"><span class="sr">van </span>€ 12</span>
+          <span class="new"><span class="sr">voor </span>€ 7</span>
+          <span class="badge">introductieprijs</span>
+        </div>
+        <a href="#" data-link="betaal" class="btn btn-pink btn-lg full">Koop het e-book
+          <svg aria-hidden="true" width="34" height="12" viewBox="0 0 64 22"><path d="M2 13c10-5 18 3 30-1s16-4 22-2l-1-6 9 7-9 8 1-6c-6-2-11 0-21 2S10 17 2 13z" fill="#C98B8B"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== AANMELDEN ===== -->
+<section id="aanmelden" class="signup-section">
+  <div class="signup">
+    <h2>Laten we <em>kennismaken</em></h2>
+    <p>Gratis gesprek van 20 minuten, online.</p>
+    <!-- KOPPELEN: kies je één van beide: dit formulier koppelen (zie README), of de knop laten doorlinken naar Calendly. -->
+    <form id="planForm" class="plan-form">
+      <div class="grid-fields">
+        <div class="field"><label for="planNaam">Voornaam</label><input id="planNaam" name="name" type="text" autocomplete="given-name" required></div>
+        <div class="field"><label for="planMail">E-mailadres</label><input id="planMail" name="email" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="planTel">Telefoonnummer</label><input id="planTel" name="phone" type="tel" autocomplete="tel"></div>
+      </div>
+      <button type="submit" class="btn btn-white btn-xl">Plan mijn kennismaking</button>
+    </form>
+    <div id="planThanks" class="plan-thanks" aria-live="polite" hidden>
+      <span>Wat leuk, je aanmelding is binnen!</span>
+      <span>Ik neem binnen een paar dagen contact met je op om een moment te plannen.</span>
+    </div>
+    <div class="contact-row">
+      <span>Liever meteen even appen?</span>
+      <a href="#" data-link="whatsapp" class="btn btn-ghost-light" target="_blank" rel="noopener">
+        <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F6E4E1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .8a4 4 0 0 1-1.8-1.8l.8-1-1-2z"/></svg>
+        WhatsApp me</a>
+      <a href="https://instagram.com/happyhormonesnl" target="_blank" rel="noopener" class="light-link">of stuur een DM op Instagram</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== VRAGEN ===== -->
+<section id="vragen" class="wrap faq">
+  <div class="faq-intro">
+    <h2>Vragen die je <em>misschien</em> hebt</h2>
+    <p>Staat je vraag er niet bij? Stuur me gerust een appje, of stel hem in het gesprek.</p>
+  </div>
+  <div class="faq-list">
+    <details><summary>Voor wie is de coaching?</summary><p>Voor vrouwen die voelen dat er iets niet klopt. Moe wakker worden, slecht slapen, een opgeblazen buik, trek in zoet of stemmingswisselingen. Vaak zijn dat signalen van je hormonen, en daar kun je met je leefstijl veel aan doen.</p></details>
+    <details><summary>Wat gebeurt er in het gratis kennismakingsgesprek?</summary><p>In 20 minuten vertel je waar je tegenaan loopt en wat je graag anders wilt. Ik vertel je eerlijk of ik je kan helpen en hoe dat eruitziet. Je zit nergens aan vast.</p></details>
+    <details><summary>Hoe lang duurt een traject?</summary><p>Dat verschilt per persoon. In het kennismakingsgesprek kijken we samen wat bij jou past.</p></details>
+    <details><summary>Moet ik meteen alles omgooien?</summary><p>Nee. We beginnen bij wat voor jou het meeste verschil maakt en bouwen van daaruit verder. Soms is dat een kleine aanpassing, soms wat meer. Jij bepaalt het tempo.</p></details>
+    <details><summary>Hoe gaan de gesprekken?</summary><p>Elke 2 weken hebben we een videogesprek, dus je kunt overal meedoen. Tussendoor kun je me appen als je vastloopt of een vraag hebt.</p></details>
+  </div>
+</section>
+
+</main>
+
+<footer class="wrap footer">
+  <span class="logo-foot">happy hormones<span class="dot">.</span></span>
+  <div class="foot-links">
+    <a href="https://instagram.com/happyhormonesnl" target="_blank" rel="noopener">@happyhormonesnl</a>
+    <span>happy-hormones.nl</span>
+    <span>KvK <span data-text="kvk">[NUMMER]</span></span>
+    <a href="privacy.html">Privacy</a>
+  </div>
+</footer>
+
+<script src="script.js?v=9"></script>
+</body>
+</html>
