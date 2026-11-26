@@ -326,3 +326,127 @@ details[open] summary::after{transform:rotate(45deg)}
   summary{font-size:19px}
   .num{font-size:52px}
 }
+
+/* =========================================================
+   Elk blok in één oogopslag
+   - op laptop/desktop past elk blok binnen het scherm onder het menu
+   - de lopende banner hoort bij "Zo gaat de coaching"
+   ========================================================= */
+:root{--pad-y:clamp(32px,6vh,80px);--view:calc(100svh - 84px)}
+.steps-section .ticker-wrap{padding:0}
+.steps-section .ticker{max-width:none}
+.opt{font-weight:400;opacity:.75}
+
+@media (min-width:901px){
+  /* hormoonscan */
+  .scan{gap:32px 64px;align-items:center}
+  .scan-card{min-height:0;padding:clamp(24px,4.5vh,48px) clamp(28px,4vw,52px)}
+  .scan-card .stack-32{gap:clamp(18px,3.4vh,32px)}
+  .question{font-size:clamp(24px,min(2.8vw,5vh),38px)}
+
+  /* zo gaat de coaching (met banner) */
+  .steps-section{gap:clamp(20px,4vh,40px);padding-top:var(--pad-y);padding-bottom:var(--pad-y)}
+  .steps-section h2{font-size:clamp(34px,min(4.2vw,8vh),60px)}
+  .step{gap:8px;padding-top:18px}
+  .num{font-size:clamp(40px,7vh,60px)}
+  .step h3{font-size:22px}
+
+  /* wie ben ik */
+  #wie{margin-bottom:0}
+  .wie{gap:40px 72px;padding-top:var(--pad-y);padding-bottom:var(--pad-y)}
+  .wie-photo{flex:0 1 360px}
+  .polaroid{max-width:340px;padding:12px 12px 48px}
+  .polaroid img{height:clamp(240px,calc(100svh - 300px),400px)}
+  .wie-text{gap:clamp(12px,2.2vh,20px)}
+  .wie-text .italic-24{font-size:21px}
+  .wie-text h2{font-size:clamp(32px,min(3.8vw,7vh),52px)}
+  .wie .lead{font-size:17px;max-width:62ch}
+  .trust>div{padding:clamp(8px,1.4vh,14px) 0;gap:14px;font-size:16px}
+  .trust svg{width:24px;height:24px}
+  .insta-head .italic-22{font-size:19px}
+  .feed{max-width:clamp(300px,52vh,440px);gap:8px}
+  .feed a{aspect-ratio:1/1;border-radius:14px}
+
+  /* e-book: boek links, tekst en twee aanbiedingen rechts */
+  .ebook-section{margin-bottom:0}
+  .stack-ebook{display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:clamp(40px,5vw,72px);row-gap:clamp(16px,3vh,28px);align-items:center}
+  .ebook-top{display:contents}
+  .book{grid-row:1 / span 2;transform:scale(.86);transform-origin:center;margin:0}
+  .ebook-text{gap:clamp(8px,1.6vh,14px);align-self:end}
+  .ebook-text .italic-24{font-size:21px}
+  .ebook-text h2{font-size:clamp(30px,min(3.4vw,6.4vh),48px)}
+  .ebook-text .lead{font-size:17px;max-width:none}
+  .checks{display:grid;grid-template-columns:1fr 1fr;gap:8px 20px;font-size:15px}
+  .checks li{gap:10px;line-height:1.35}
+  .checks li::before{flex-basis:24px;height:24px;background-size:13px}
+  .offers{align-self:start;grid-template-columns:1fr 1fr;gap:16px}
+  .offer{border-radius:28px;padding:clamp(18px,3vh,28px) clamp(20px,2.2vw,28px);gap:clamp(8px,1.4vh,12px)}
+  .offer h3{font-size:clamp(22px,4vh,28px)}
+  .offer .grow{font-size:15px;line-height:1.45}
+  .offer .eyebrow-13{font-size:12px}
+  #ebookForm label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  #ebookForm input{min-height:48px}
+  .offer .btn-lg{min-height:48px;font-size:16px}
+  .price .old{font-size:22px}
+  .price .new{font-size:40px}
+
+  /* kennismaken */
+  .signup-section{padding-top:var(--pad-y)}
+  .signup{gap:clamp(14px,2.6vh,24px);padding:clamp(32px,6vh,64px) clamp(28px,6vw,88px);border-radius:40px}
+  .signup h2{font-size:clamp(34px,min(4.4vw,8vh),60px)}
+  .signup>p{font-size:18px}
+  .plan-form{max-width:900px;gap:14px}
+  .plan-form .grid-fields{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .plan-form input{min-height:50px}
+  .plan-form .btn-xl{min-height:54px;font-size:18px;max-width:420px;align-self:center}
+  .contact-row .btn{min-height:46px}
+  .light-link{min-height:46px}
+}
+@media (min-width:901px){
+  .wie{padding-top:clamp(28px,5vh,72px);padding-bottom:clamp(28px,5vh,72px)}
+  .wie .lead{max-width:none}
+  .checks{grid-template-columns:auto auto;justify-content:start;column-gap:28px}
+  .stack-ebook{padding-top:clamp(28px,5vh,72px);padding-bottom:clamp(28px,5vh,72px)}
+}
+@media (min-width:901px){
+  .wie-text .stack-12{flex-direction:row-reverse;align-items:center;justify-content:flex-end;gap:20px}
+  .wie-text .insta-head{flex-direction:column;align-items:flex-start;gap:2px}
+  .feed{flex:0 0 clamp(270px,46vh,380px);max-width:none}
+}
+@media (min-width:901px){
+  #scanResult{gap:clamp(12px,2.2vh,22px)}
+  .result-title{font-size:clamp(40px,min(4.6vw,8vh),64px)}
+  #bars{gap:clamp(6px,1.2vh,12px)}
+  .bar-track,.bar-fill{height:14px}
+  #scanGate{gap:clamp(12px,2vh,20px)}
+  .gate-title{font-size:clamp(28px,min(3.2vw,6vh),44px)}
+  #scanGate input{min-height:50px}
+}
+
+/* =========================================================
+   Menu-klik = precies één scherm
+   - elk blok vult het hele scherm; de inhoud staat in het midden
+     van de ruimte onder het zwevende menu
+   - je ziet dus geen stuk van het vorige of volgende blok meer
+   ========================================================= */
+@media (min-width:901px) and (min-height:540px){
+  :root{--menu:78px}
+  #scan,#stappen,#wie,#ebook,#aanmelden{
+    min-height:100svh;scroll-margin-top:0;
+    display:flex;flex-direction:column;justify-content:center;
+    padding-top:calc(var(--menu) + clamp(4px,1.5vh,20px));
+    padding-bottom:clamp(16px,3.5vh,40px);
+    margin-bottom:0;
+  }
+  #vragen{scroll-margin-top:var(--menu)}
+  .scan,.wie,.stack-ebook{padding-top:0;padding-bottom:0;width:100%}
+  #stappen.steps-section{padding-top:calc(var(--menu) + clamp(4px,1.5vh,20px));padding-bottom:clamp(16px,3.5vh,40px)}
+  .wie{align-items:center}
+  .signup-section{padding-left:var(--pad-x);padding-right:var(--pad-x)}
+  .signup{width:100%}
+  .faq{padding-top:clamp(32px,6vh,72px)}
+}
+@media (min-width:901px){
+  .signup{max-width:1000px}
+  .plan-form{max-width:820px}
+}
